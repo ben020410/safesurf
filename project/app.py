@@ -5,7 +5,7 @@ import pickle
 app = Flask(__name__)
 
 # 학습된 모델 로드 (모델이 pickle 형식으로 저장되었다고 가정)
-with open("model.pkl", "rb") as model_file:
+with open("./project/model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
 # 홈페이지 라우트
