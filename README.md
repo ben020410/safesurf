@@ -41,7 +41,7 @@ python -m venv venv
 
 그 다음, 가상 환경을 활성화합니다(Windows와 Linux/Mac의 명령어가 다름에 주의). <br>
 
-- Windows
+- Windows - [만약 오류가 발생한다면?](https://github.com/ben020410/safesurf/issues/1)
 ```bash
 venv\Scripts\activate
 ```
