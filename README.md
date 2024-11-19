@@ -1,12 +1,12 @@
 ## :sparkles: 소개
-2024-2 서울대학교 <빅데이터 개론> 수업의 "악성 URL 탐지 서비스" 프로젝트 수행 내용입니다. <br>
+2024-2 서울대학교 <빅데이터 개론> 수업의 **악성 URL 탐지 서비스** 프로젝트 수행 내용입니다. <br>
 <br>
 <img src="https://github.com/user-attachments/assets/8253e463-2a12-43f2-ba4a-b3ab3115ecb9" width="900" height="400"/>
 <br>
 <br>
 
 ## :hammer_and_wrench: 설치
-`python` 및 `pip`가 설치되어 있지 않다면 설치 후 진행합니다.
+`python` 및 `pip`가 설치되어 있지 않다면 설치 후 진행합니다([설치 방법](https://heytech.tistory.com/318)).
 
 ### 1. Git을 처음 접하는 경우(사용해본 적이 있다면 다음 단계로)
 터미널에서 다음 명령을 실행합니다. <br>
