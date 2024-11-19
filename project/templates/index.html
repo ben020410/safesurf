@@ -1,18 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malware Classifier</title>
+    <title>Safesurf</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Malware Link Classifier</h1>
-    <form id="linkForm">
-        <input type="text" id="linkInput" placeholder="Enter URL here..." required>
-        <button type="submit">Classify</button>
-    </form>
-    <p id="result"></p>
+    <div class="header" onclick="location.reload();">
+        <h1>Safesurf</h1>
+    </div>
+
+    <p class="description">
+        <strong>본 사이트의 목적</strong>은 인공지능을 이용하여 <strong>악성 URL 탐지</strong> 서비스를 제공하는 것입니다.
+    </p>
+    <p style="margin-bottom: 60px;">서울대학교 빅데이터 혁신융합대학 Safesurf 팀</p>
+
+    <h2>의심되는 URL을 입력하세요</h2>
+    <input type="text" id="urlInput" placeholder="URL을 입력하세요...">
+    <button onclick="checkURL()" style="margin-bottom: 40px;">안전한지 확인하기</button>
+
+    <div class="animation-container" id="animationContainer">
+        <canvas id="oceanCanvas"></canvas>
+    </div>
+
     <script src="/static/script.js"></script>
+    <script>
+        async function checkURL() {
+            const urlInput = document.getElementById('urlInput').value;
+            if (!urlInput) {
+                alert('URL을 입력해 주세요.');
+                return;
+            }
+
+            try {
+                // POST 요청으로 백엔드 API 호출
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ link: urlInput }),
+                });
+
+                // 응답 처리
+                const result = await response.json();
+                if (response.ok) {
+                    alert(`결과: ${result.prediction}`);
+                } else {
+                    alert(`에러: ${result.error}`);
+                }
+            } catch (error) {
+                console.error('API 호출 에러:', error);
+                alert('API 호출 중 문제가 발생했습니다.');
+            }
+            // 애니메이션 초기화 및 시작 (필요에 따라 canvas 상태 조정)
+        }
+    </script>
 </body>
 </html>
