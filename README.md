@@ -1,7 +1,7 @@
 ## :sparkles: 소개
 2024-2 서울대학교 <빅데이터 개론> 수업의 **악성 URL 탐지 서비스** 프로젝트 수행 내용입니다. <br>
 <br>
-<img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="1024" height="300"/>
+<img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="853" height="250"/>
 <br>
 <br>
 
