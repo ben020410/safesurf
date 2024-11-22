@@ -1,5 +1,19 @@
+<p align="center">
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/d7a2fc93-04e8-4a27-a995-9140fcd738cd" width="300">
+  </p>
+  <h1 align="center">🏄 Safesurf 악성 URL 진단 서비스 ✅</h1>
+  <p align="center">
+    <h3 align="center">2024-2 서울대학교 AI빅데이터기초/빅데이터개론I 기말 프로젝트</h3>
+  </p>
+  <p align="center">
+    <a> 김준휘, 나세민, 문희주, 박하연, 방준혁, 서예린, 윤정원, 이상은(팀장), 이정균, 이정원 </a>
+  </p>
+</p>
+<br>
+
 ## :sparkles: 소개
-2024-2 서울대학교 <빅데이터 개론> 수업의 **악성 URL 탐지 서비스** 프로젝트 수행 내용입니다. <br>
+사용자가 URL을 입력하면, 사전 학습된 분류 모델을 통해 악성 URL 여부를 판단해 알려주는 서비스입니다. <br>
 <br>
 <img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="853" height="250"/>
 <br>
