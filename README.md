@@ -15,7 +15,7 @@
 ## :sparkles: 소개
 사용자가 URL을 입력하면, 사전 학습된 분류 모델을 통해 악성 URL 여부를 판단해 알려주는 서비스입니다. <br>
 <br>
-<img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="853" height="250"/>
+<img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="700"/>
 <br>
 <br>
 
