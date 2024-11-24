@@ -2,7 +2,7 @@
   <p align="center">
     <img src="https://github.com/user-attachments/assets/d7a2fc93-04e8-4a27-a995-9140fcd738cd" width="300">
   </p>
-  <h1 align="center">🏄 Safesurf 악성 URL 진단 서비스 ✅</h1>
+  <h1 align="center">🏄 Safesurf: 악성 URL 진단 서비스 ✅</h1>
   <p align="center">
     <h3 align="center">2024-2 서울대학교 AI빅데이터기초/빅데이터개론I 기말 프로젝트</h3>
   </p>
