@@ -27,8 +27,8 @@
 ```bash
 git --version
 ```
-결과로 버전 정보가 출력되면, Git이 이미 설치된 것입니다(예시: `git version 2.34.1`). <br>
-설치되지 않은 경우 [Git 공식 사이트](https://git-scm.com/)에서 다운로드하여 설치합니다. <br>
+결과로 버전 정보가 출력되면, git이 이미 설치된 것입니다(예시: `git version 2.34.1`). <br>
+설치되지 않은 경우 [git 공식 사이트](https://git-scm.com/)에서 다운로드하여 설치합니다. <br>
 <br>
 
 ### 2. 저장소 복제
