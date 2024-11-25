@@ -76,39 +76,57 @@ pip install -r requirements.txt
 <br>
 <details>
   <summary>(버전 관련) 오류 발생 시 해결 방법</summary>
-  1. **Python 3.12 이후 버전**을 사용하는 경우 오류가 반복해서 발생할 수 있습니다. 아래 명령문을 입력해 어떤 버전이 설치되어있는지 확인하시고 Python 3.12 이후 버전이 설치되어있는 경우 [Python 3.11](https://www.python.org/downloads/release/python-3110/) 또는 [Python 3.10](https://www.python.org/downloads/release/python-31010/) 버전을 다운받아 다시 시도해보시길 권해드립니다. <br>
+  1. **Python 3.12 이후 버전**을 사용하는 경우 오류가 반복해서 발생할 수 있습니다. <br>
+  아래 명령문을 입력해 어떤 버전이 설치되어있는지 확인하시고<br>
+  Python 3.12 이후 버전이 설치되어있는 경우 이전 버전을 다운받아 다시 시도해보시길 권해드립니다. <br>
+  - [Python 3.11](https://www.python.org/downloads/relsease/python-3110/)
+  - [Python 3.10](https://www.python.org/downloads/release/python-31010/)
+  <br>
   ```
   python --version
   ```
+  <br>
+
   
-  2. wheel, pip, setuptools 3가지가 제대로 install/upgrade되면 오류가 발생하지 않습니다. 
+  2. Python 버전에 관계없이 **'wheel', 'pip', 'setuptools'** 3가지가 최신 버전으로 설치되어있으면 오류가 발생하지 않습니다. 다음 명령문을 입력해 'wheel', 'pip', 'setuptools'를 각각 최신 버전으로 설치할 수 있습니다. <br>
   ```
   pip install --upgrade wheel
   pip install --upgrade pip
   pip install --upgrade setuptools
   ```
-  <summary>오류 예시 1) ModuleNotFoundError: No module named 'distutils'  
-    오류 예시 2) AttributeError: module 'pkgutil' has no attribute 'Implmporter'. Did you mean: 'zipimporter'? </summary>
   <br>
-  설치된 setuptools의 버전이 outdated 되었거나 Python 3.12버전부터 distutils 등의 일부 모델이 standard library에서 제외되어 발생하는 오류로 setuptools를 설치 또는 upgrade하여 해결할 수 있습니다. <br>
-  다음 명령을 입력해 setuptools가 설치되어있지 않다면 setuptools를 최신 버전으로 설치하고 이미 설치되어있다면 최신 버전으로 upgrade시켜줍니다. (pip install setuptools로도 설치할 수 있습니다) <br>
-  ```
-  pip install -- upgrade setuptools
-  ```
-  <br>
-  <summary>오류 예시 3) Getting requirements to bild wheel did not run successfully</summary>
-  > wheel을 install/upgrade해서 해결할 수 있습니다. 
-  ```
-  pip install -- upgrade setuptools
-  ```
-  (위의 오류문이 출력되었더라도 다른 부분이 원인일 수 있습니다)
-  <summar>오류 예시 4) InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.1.3 when using version 1.5.2.</summar>
-  > requirements.txt가 제대로 설치되면 발생하지 않는 오류로 라이브러리의 버전이 requirements.txt에 적힌 버전과 다른 버전으로 설치가 되어있어 문제가 발생한 경우입니다.
-  오류문에 따라 해당 라이브러리를 downgrade하거나 upgrade해주면 됩니다. <br>
-  예를 들어 2.0.3버전의 pandas를 install하려는 경우 다음과 같은 명령어를 입력하면 됩니다.
-   ```bash
-  pip install pandas==2.0.3
-  ```
+  <details>
+    <summary>오류 예시 1) ModuleNotFoundError: No module named 'distutils'<br>
+    오류 예시 2) AttributeError: module 'pkgutil' has no attribute 'Implmporter'. Did       you mean: 'zipimporter'? </summary>
+    <br>
+    설치된 'setuptools'가 옛날 버전이거나 Python 3.12버전부터 'distutils' 등의 일부 모델 표준 라이브러리에서 제외되어 발생하는 오류로 'setuptools'를 설치 또는 최신 버전으로 업그레이드하여 해결할 수 있습니다. <br>
+    다음 명령을 입력해 'setuptools'가 설치되어있지 않다면 최신 버전으로 설치하고 이미 설치되어있다면 최신 버전으로 업그레이드 시켜줍니다. <br>
+    ```
+    pip install -- upgrade setuptools
+    ```
+    <br>
+  </details>
+  <details>
+    <summary>오류 예시 3) Getting requirements to bild wheel did not run successfully</summary>
+    <br>
+    wheel을 install/upgrade해서 해결할 수 있습니다. <br>
+    ```
+    pip install -- upgrade setuptools
+    ```
+    <br>
+    (위의 오류문이 출력되었더라도 다른 부분이 원인일 수 있습니다. 오류가 해결되지 않는다면 오     류문에 다른 오류가 명시되어있지는 않은지 확인해주세요.)
+  </details>
+  <details>
+    <summary>오류 예시 4) InconsistentVersionWarning: Trying to unpickle estimator          DecisionTreeClassifier from version 1.1.3 when using version 1.5.2.</summary>
+    <br>
+    requirements.txt가 제대로 설치되면 발생하지 않는 오류로 라이브러리의 버전이                 requirements.txt에 적힌 버전과 다른 버전으로 설치가 되어있어 문제가 발생한 경우입니다. 
+    <br>
+    오류문에 따라 해당 라이브러리를 다운그레이드하거나 업그레이드 해주면 됩니다. <br>
+    예를 들어 2.0.3버전의 'pandas'를 설치하려는 경우 다음과 같은 명령어를 입력하면 됩니다.
+    ```
+    pip install pandas==2.0.3
+    ```
+  </details>
 </details>
 <br>
 
