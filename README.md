@@ -20,7 +20,7 @@
 <br>
 
 ## :desktop_computer: 서비스 로직
-사용자가 입력한 URL이 백엔드의 Flask 서버로 전달되고, Flask 어플리케이션에서 분류 모델 파일을 불러와 예측 결과를 도출합니다. <br>
+사용자가 입력한 URL이 백엔드의 Flask 서버로 전달되고, Flask 어플리케이션에서 분류 모델 파일을 불러와 예측 결과를 도출합니다. 도출된 결과는 다시 프론트엔드로 전달되어 유저에게 보여집니다. <br>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5f964ea0-03df-4885-bb4d-9775b9fe1321" width="800"/>
 </p>
