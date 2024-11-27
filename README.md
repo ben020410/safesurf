@@ -19,6 +19,14 @@
 </p>
 <br>
 
+## :desktop_computer: 서비스 로직
+사용자가 입력한 URL이 백엔드의 Flask 서버로 전달되고, Flask 어플리케이션에서 분류 모델 파일을 불러와 예측 결과를 도출합니다. <br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5f964ea0-03df-4885-bb4d-9775b9fe1321" width="800"/>
+</p>
+<br>
+
+
 ## :hammer_and_wrench: 설치
 `python` 및 `pip`가 설치되어 있지 않다면 설치 후 진행합니다([설치 방법](https://heytech.tistory.com/318)).
 
@@ -85,7 +93,7 @@ deactivate
 
 <br>
 
-## :arrow_forward: 로컬에서 실행
+## :floppy_disk: 로컬에서 실행
 위 설치 단계를 마쳤다면, 로컬 환경에서 서비스를 실행할 수 있습니다. <br> <br>
 우선 가상 환경을 활성화합니다.
 - Windows
