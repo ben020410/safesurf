@@ -15,7 +15,7 @@ with open(model_path, "rb") as model_file:
 # URL 전처리 함수
 def extract_features(url):
     url_length = len(url)
-    special_char_count = len(re.findall(r'[!#@%\-_]', url))
+    special_char_count = len(re.findall(r'[!@#$%^&*()_+-=[]{};:,.<>/?`~|]', url))
     specific_words = ['login', 'admin', 'confirm', '.exe', '000webhost', 'secure', 'account', 'update', 'verify']
     contains_specific_word = any(word in url for word in specific_words)
     num_digits = sum(c.isdigit() for c in url)
@@ -25,10 +25,12 @@ def extract_features(url):
     query_length = len(re.findall(r'\\?.+', url))
     ngrams = re.findall(r'..', url)
     ngram_count = len(ngrams)
+    www_start = 1 if url.startswith('www') else 0
+    ssl = 1 if url.startswith('https') else 0
 
     return [
         url_length, special_char_count, int(contains_specific_word), digit_ratio,
-        contains_at_symbol_domain, path_length, query_length, ngram_count
+        contains_at_symbol_domain, path_length, query_length, ngram_count, www_start, ssl
     ]
 
 # 홈페이지 라우트
@@ -53,13 +55,13 @@ def predict():
         # 피처 이름을 포함한 DataFrame으로 변환
         feature_names = [
             'url_length', 'special_char_count', 'contains_specific_word', 'digit_ratio',
-            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count'
+            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count', 'www_start', 'ssl'
         ]
         processed_input_df = pd.DataFrame([processed_input], columns=feature_names)
 
         # 모델 예측
         prediction = model.predict(processed_input_df)
-        result = "Malicious" if prediction[0] == "malicious" else "Safe"
+        result = "Safe" if prediction[0] == "benign" else "Malicious"
 
         return jsonify({"prediction": result})
     except Exception as e:
