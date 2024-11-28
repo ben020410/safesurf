@@ -1,9 +1,31 @@
+<p align="center">
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/d7a2fc93-04e8-4a27-a995-9140fcd738cd" width="300">
+  </p>
+  <h1 align="center">🏄 Safesurf: 악성 URL 진단 서비스 ✅</h1>
+  <p align="center">
+    <h3 align="center">2024-2 서울대학교 AI빅데이터기초/빅데이터개론I 기말 프로젝트</h3>
+  </p>
+  <p align="center">
+    <a> 김준휘, 나세민, 문희주, 박하연, 방준혁, 서예린, 윤정원, 이상은(팀장), 이정균, 이정은 </a>
+  </p>
+</p>
+<br>
+
 ## :sparkles: 소개
-2024-2 서울대학교 <빅데이터 개론> 수업의 **악성 URL 탐지 서비스** 프로젝트 수행 내용입니다. <br>
+사용자가 URL을 입력하면, 사전 학습된 AI 분류 모델을 통해 악성 URL 여부를 판단해 알려주는 서비스입니다. <br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="800"/>
+</p>
 <br>
-<img src="https://github.com/user-attachments/assets/261ea884-6e4c-49f3-9550-91b773dc5010" width="853" height="250"/>
+
+## :desktop_computer: 서비스 로직
+사용자가 입력한 URL이 백엔드의 Flask 서버로 전달되고, Flask 어플리케이션에서 분류 모델 파일을 불러와 예측 결과를 도출합니다. 도출된 결과는 다시 프론트엔드로 전달되어 유저에게 보여집니다. <br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5f964ea0-03df-4885-bb4d-9775b9fe1321" width="800"/>
+</p>
 <br>
-<br>
+
 
 ## :hammer_and_wrench: 설치
 `python` 및 `pip`가 설치되어 있지 않다면 설치 후 진행합니다([설치 방법](https://heytech.tistory.com/318)).
@@ -13,8 +35,8 @@
 ```bash
 git --version
 ```
-결과로 버전 정보가 출력되면, Git이 이미 설치된 것입니다(예시: `git version 2.34.1`). <br>
-설치되지 않은 경우 [Git 공식 사이트](https://git-scm.com/)에서 다운로드하여 설치합니다. <br>
+결과로 버전 정보가 출력되면, git이 이미 설치된 것입니다(예시: `git version 2.34.1`). <br>
+설치되지 않은 경우 [git 공식 사이트](https://git-scm.com/)에서 다운로드하여 설치합니다. <br>
 <br>
 
 ### 2. 저장소 복제
@@ -59,6 +81,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 (참고로, 가상 환경을 실행한 후 패키지를 설치하기 때문에 이 프로젝트를 진행할 때만 패키지가 사용되고, 로컬 환경의 다른 패키지와의 충돌이 발생하지 않습니다.) <br>
+
+- [버전 관련 오류가 발생한다면?](https://github.com/ben020410/safesurf/issues/2)
 <br>
 
 ### 5. 가상 환경 비활성화
@@ -66,9 +90,10 @@ pip install -r requirements.txt
 ```
 deactivate
 ```
+
 <br>
 
-## :arrow_forward: 로컬에서 실행
+## :floppy_disk: 로컬에서 실행
 위 설치 단계를 마쳤다면, 로컬 환경에서 서비스를 실행할 수 있습니다. <br> <br>
 우선 가상 환경을 활성화합니다.
 - Windows
