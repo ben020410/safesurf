@@ -62,7 +62,7 @@ git clone https://github.com/ben020410/safesurf.git
 
 ### 3. 모델 파일 다운로드
 [여기](https://drive.google.com/file/d/15mL7pKk4qz9WIWoimGQPkP_nGG9hr6wz/view?usp=sharing)를 클릭하여 모델 파일(`.pkl`)을 다운로드 받습니다.
-다운로드 받은 `pkl` 파일을 `safesurf/project` 폴더 안으로 이동합니다. <br>
+다운로드 받은 `pkl` 파일을 `safesurf/project` 폴더 안으로 이동합니다.
 **(주의할 점: 폴더 위치가 틀리면 추후 오류가 발생할 수 있습니다.)** <br>
 <br>
 
