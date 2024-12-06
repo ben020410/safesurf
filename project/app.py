@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import re
 import os
+from urllib.parse import urlparse
 
 # Flask 앱 초기화
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -25,12 +26,13 @@ def extract_features(url):
     query_length = len(re.findall(r'\\?.+', url))
     ngrams = re.findall(r'..', url)
     ngram_count = len(ngrams)
-    www_start = 1 if url.startswith('www') else 0
+    parsed_url = urlparse(url)
+    contains_www = 'www' in parsed_url.netloc
     ssl = 1 if url.startswith('https') else 0
 
     return [
         url_length, special_char_count, int(contains_specific_word), digit_ratio,
-        contains_at_symbol_domain, path_length, query_length, ngram_count, www_start, ssl
+        contains_at_symbol_domain, path_length, query_length, ngram_count, contains_www, ssl
     ]
 
 # 홈페이지 라우트
@@ -55,7 +57,7 @@ def predict():
         # 피처 이름을 포함한 DataFrame으로 변환
         feature_names = [
             'url_length', 'special_char_count', 'contains_specific_word', 'digit_ratio',
-            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count', 'www_start', 'ssl'
+            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count', 'has_www', 'ssl'
         ]
         processed_input_df = pd.DataFrame([processed_input], columns=feature_names)
 
