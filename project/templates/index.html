@@ -47,7 +47,12 @@
                 // 응답 처리
                 const result = await response.json();
                 if (response.ok) {
-                    alert(`결과: ${result.prediction}`);
+                    if(result.prediction == 'Safe') {
+                        alert(`이 사이트는 안전한 사이트입니다.`);
+                    }
+                    else {
+                        alert('이 사이트는 안전하지 않습니다. 접속하지 않는 것을 권장합니다.')
+                    }
                 } else {
                     alert(`에러: ${result.error}`);
                 }

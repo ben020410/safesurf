@@ -39,15 +39,15 @@ def extract_features(url):
      # Feature 9: https 여부
     parsed_url = urlparse(url)
     if parsed_url.scheme == 'http':
-        ssl= 1  # HTTP는 피싱 사이트로 간주
+        SSL= 1  # HTTP는 피싱 사이트로 간주
     elif parsed_url.scheme == 'https':
-        ssl= 0  # HTTPS는 정상 사이트로 간주
+        SSL= 0  # HTTPS는 정상 사이트로 간주
     else:
-        ssl= -1  # 비정상적인 경우
+        SSL= -1  # 비정상적인 경우
 
     return [
         url_length, special_char_count, int(contains_specific_word), digit_ratio,
-        contains_at_symbol_domain, path_length, query_length, ngram_count, contains_www, ssl
+        contains_at_symbol_domain, path_length, query_length, ngram_count, contains_www, SSL
     ]
 
 # 홈페이지 라우트
@@ -72,7 +72,7 @@ def predict():
         # 피처 이름을 포함한 DataFrame으로 변환
         feature_names = [
             'url_length', 'special_char_count', 'contains_specific_word', 'digit_ratio',
-            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count', 'has_www', 'ssl'
+            'contains_at_symbol_domain', 'path_length', 'query_length', 'ngram_count', 'has_www', 'SSL'
         ]
         processed_input_df = pd.DataFrame([processed_input], columns=feature_names)
 
