@@ -15,20 +15,35 @@ with open(model_path, "rb") as model_file:
 
 # URL 전처리 함수
 def extract_features(url):
+    # Feature 1: URL 길이
     url_length = len(url)
-    special_char_count = len(re.findall(r'[!@#$%^&*()_+-=[]{};:,.<>/?`~|]', url))
+    # Feature 2: 특정 특수문자 개수 (!, #, @, %, - 등)
+    special_char_count = len(re.findall(r'[!@#$%^&*()_+\-=[\]{};\':",.<>/?~\|]', url))
+    # Feature 3: 특정 단어 포함 여부 (login, admin, confirm, .exe, 000webhost 등)
     specific_words = ['login', 'admin', 'confirm', '.exe', '000webhost', 'secure', 'account', 'update', 'verify']
     contains_specific_word = any(word in url for word in specific_words)
+    # Feature 4: 숫자 구성 비율
     num_digits = sum(c.isdigit() for c in url)
     digit_ratio = num_digits / len(url) if len(url) > 0 else 0
+    # Feature 5: @ 기호 이후 도메인 여부
     contains_at_symbol_domain = int('@' in url and re.search(r'@[\\w.-]+', url) is not None)
+    # Feature 6: Path 및 Query String 길이
     path_length = len(re.findall(r'/[\\w.-]+', url))
     query_length = len(re.findall(r'\\?.+', url))
+    # Feature 7: N-gram 특질 (bigram)
     ngrams = re.findall(r'..', url)
     ngram_count = len(ngrams)
+    # Feature 8: www 포함여부
     parsed_url = urlparse(url)
     contains_www = 'www' in parsed_url.netloc
-    ssl = 1 if url.startswith('https') else 0
+     # Feature 9: https 여부
+    parsed_url = urlparse(url)
+    if parsed_url.scheme == 'http':
+        ssl= 1  # HTTP는 피싱 사이트로 간주
+    elif parsed_url.scheme == 'https':
+        ssl= 0  # HTTPS는 정상 사이트로 간주
+    else:
+        ssl= -1  # 비정상적인 경우
 
     return [
         url_length, special_char_count, int(contains_specific_word), digit_ratio,
