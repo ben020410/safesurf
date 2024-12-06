@@ -24,6 +24,14 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5f964ea0-03df-4885-bb4d-9775b9fe1321" width="800"/>
 </p>
+
+## 📊 데이터셋
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/48745aba-688a-4e81-a9a8-ad3ba7340df3" width="800"/>
+</p>
+
+기본적으로 [Malicious And Benign URLs](https://www.kaggle.com/datasets/siddharthkumar25/malicious-and-benign-urls) 데이터셋을 사용하였으며, 국내 링크를 보충하기 위해 팀원들의 방문기록 URL에 `benign` 레이블을 붙여 데이터셋에 추가했습니다. <br>
+머신러닝 모델의 경우 8개의 분류 모델 중 Accuracy가 가장 높았던 **Random Forest** 분류 모델을 사용하였습니다. <br>
 <br>
 
 
@@ -52,7 +60,13 @@ git clone https://github.com/ben020410/safesurf.git
 이 명령은 `safesurf` 레포지토리를 복사하여 현재 경로에 `safesurf` 폴더를 생성합니다. <br>
 <br>
 
-### 3. 가상 환경 생성 및 활성화
+### 3. 모델 파일 다운로드
+[여기](https://drive.google.com/file/d/15mL7pKk4qz9WIWoimGQPkP_nGG9hr6wz/view?usp=sharing)를 클릭하여 모델 파일(`.pkl`)을 다운로드 받습니다.
+다운로드 받은 `pkl` 파일을 `safesurf/project` 폴더 안으로 이동합니다. <br>
+**(주의할 점: 폴더 위치가 틀리면 추후 오류가 발생할 수 있습니다.)** <br>
+<br>
+
+### 4. 가상 환경 생성 및 활성화
 2.에서 복제한 `safesurf` 폴더에서 터미널을 열고, 다음 명령을 입력합니다.
 **(주의할 점: `safesurf` 폴더에서 명령어를 실행하지 않는다면 추후 오류가 발생할 수 있습니다.)** <br>
 ```bash
@@ -74,7 +88,7 @@ source venv/bin/activate
 활성화되면, 터미널 프롬프트가 `(venv)`로 시작하게 됩니다. <br>
 <br>
 
-### 4. 필요한 패키지 설치
+### 5. 필요한 패키지 설치
 프로젝트에서 필요한 라이브러리를 설치합니다. <br>
 `safesurf` 폴더에서 터미널을 열고, 다음 명령을 입력합니다(마찬가지로, 다른 폴더에서 명령어를 실행하면 오류가 발생할 수 있습니다). <br>
 ```bash
@@ -85,7 +99,7 @@ pip install -r requirements.txt
 - [버전 관련 오류가 발생한다면?](https://github.com/ben020410/safesurf/issues/2)
 <br>
 
-### 5. 가상 환경 비활성화
+### 6. 가상 환경 비활성화
 이제 설치가 모두 끝났습니다. 터미널에서 실행했던 가상 환경을 비활성화합니다. <br>
 ```
 deactivate
